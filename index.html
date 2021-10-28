@@ -17,28 +17,48 @@
 <body>
   <header>
     <h1>Todo</h1>
-    <div>
-      <img src="./project/images/icon-sun.svg" alt="icon light">
-      <img src="./project/images/icon-moon.svg" alt="icon dark">
+    <div class="icon-themes">
+      <img id="light" src="./project/images/icon-sun.svg" alt="icon light">
+      <img id="dark" src="./project/images/icon-moon.svg" alt="icon dark">
     </div>
   </header>
 
   <main>
     <section>
-
+      <input type="text" name="" id="" placeholder="Create a new todo...">
     </section>
 
     <section>
       <ul>
-        <li>Complete online JavaScrip course</li>
-        <li>Jog around the park 3x</li>
-        <li>10 minutes meditation</li>
-        <li>Read for hour</li>
-        <li>Complete Todo App on Frontend Mentor</li>
+        <li><p>
+          Complete online JavaScrip course 
+          <img src="./project/images/icon-cross.svg" alt="close button">
+        </p></li>
+        <li><p>
+          Jog around the park 3x
+          <img src="./project/images/icon-cross.svg" alt="close button">
+        </p></li>
+        <li><p>
+          10 minutes meditation
+          <img src="./project/images/icon-cross.svg" alt="close button">
+        </p></li>
+        <li>
+          <div style="margin-right: 12px; cursor: pointer; display: flex; align-self: center; height: 20px; width: 20px; background-color: none; border: solid 1px; border-radius: 50%;">
+            
+          </div>
+          <p>
+          Read for hour
+          <img src="./project/images/icon-cross.svg" alt="close button">
+        </p></li>
+        <li><p>
+          Complete Todo App on Frontend Mentor
+          <img src="./project/images/icon-cross.svg" alt="close button">
+        </p></li>
+        <li><p>
+          <span><!-- Add dynamic number --> 5 items left</span>
+          <span><a href="#">Clear Completed</a></span>
+        </p></li>
       </ul>
-      
-      <span><!-- Add dynamic number --> 5 items left</span>
-      <span><a href="#">Clear Completed</a></span>
     </section>
 
     <nav>

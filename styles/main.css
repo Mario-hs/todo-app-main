@@ -1,10 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
 * {
   margin: 0px;
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 16px;
+  font-size: 12px;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
 }
 
 a, li, ul {
@@ -12,16 +18,123 @@ a, li, ul {
   text-decoration: none;
 }
 
+button, input {
+  background: none;
+  border: none;
+}
+
 button {
   font-size: 18px;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 27px;
 }
 
 span, a {
   font-size: 12px;
+}
+
+body {
+  background-color: #161722;
+}
+
+body header {
+  background-image: url("../project/images/bg-mobile-dark.jpg");
+  background-size: cover;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px 24px;
+  text-transform: uppercase;
+}
+
+body header h1 {
+  letter-spacing: 0.4rem;
+  color: #fafafa;
+}
+
+body header .icon-themes #light {
+  width: 20px;
+}
+
+body header .icon-themes #dark {
+  width: 20px;
+  display: none;
+}
+
+body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: -90px auto 30px;
+}
+
+body main section {
+  width: 88%;
+  margin-bottom: 15px;
+  background-color: #25273c;
+  border-radius: .35rem;
+  padding: 0 20px;
+}
+
+body main section input {
+  height: 48px;
+  width: 100%;
+  color: #e4e5f1;
+  font-weight: 300;
+}
+
+body main section :focus {
+  outline: 0;
+}
+
+body main section li {
+  font-weight: 300;
+  color: #e4e5f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main section li p {
+  height: 55px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main section li p a, body main section li p span {
+  font-weight: 400;
+  color: #777a92;
+}
+
+body main section li::after {
+  content: " ";
+  position: absolute;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+  width: 88%;
+  height: 1px;
+  background: #393a4c;
 }
 
 body footer .attribution {

@@ -1,6 +1,91 @@
 @import './reset';
+@import './variable';
 
 body {
+    background-color: $very-dark-blue;
+
+    header {
+        background-image: url('../project/images/bg-mobile-dark.jpg');
+        background-size: cover;
+
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 24px;
+        text-transform: uppercase;
+
+        h1 {
+            letter-spacing: 0.4rem;
+            color: $very-light-gray;
+        }
+
+        .icon-themes {
+            #light {
+                width: 20px;
+            }
+            #dark {
+                width: 20px;
+                display: none;
+            }
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: -90px auto 30px;
+
+        section {
+            width: 88%;
+            margin-bottom: 15px;
+            background-color: $very-dark-desaturated-blue;
+            border-radius: .35rem;
+            padding: 0 20px;
+            
+            input {
+                height: 48px;
+                width: 100%;
+                color: $very-light-grayish-blue;
+                font-weight: 300;
+            }
+
+            :focus {
+                outline: 0;
+            } 
+
+            li {
+                font-weight: 300;
+                color: $very-light-grayish-blue;
+                display: flex;
+
+                p {
+                    height: 55px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    a, span {
+                        font-weight: 400;
+                        color: $dark-grayish-blue;
+                    }
+                }
+
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    transform: translateX(-20px);
+                    width: 88%;
+                    height: 1px;
+                    background: $very-dark-grayish-blue;
+                }
+            }
+        }
+
+        
+    }
+
     footer {
         .attribution {
             font-size: 11px;
