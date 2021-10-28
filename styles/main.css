@@ -1,0 +1,35 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+a, li, ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+button {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+span, a {
+  font-size: 12px;
+}
+
+body footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+body footer .attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=main.css.map */
