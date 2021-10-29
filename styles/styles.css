@@ -247,7 +247,7 @@ body header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 50px 24px;
+  padding: 50px 6%;
   text-transform: uppercase;
 }
 
