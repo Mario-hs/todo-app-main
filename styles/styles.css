@@ -385,6 +385,7 @@ body main nav {
 }
 
 body main nav button {
+  cursor: pointer;
   opacity: 0.6;
 }
 
