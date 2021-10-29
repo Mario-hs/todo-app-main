@@ -1,0 +1,96 @@
+@import './variable';
+
+.light {
+    transition-duration: 1.5s;
+    transition-delay: 10ms;
+    background-color: $Light-very-light-grayish-blue;
+
+    header {
+        transition-duration: 2s;
+        transition-delay: 15ms;
+        background-image: url('../project/images/bg-mobile-light.jpg');
+
+        .icon-themes {
+            #light {
+                display: none;
+            }
+            #dark {
+                display: block;
+            }
+        }
+
+    }
+
+    main {
+
+        section, nav {
+            transition-duration: 2s;
+            transition-delay: 15ms;
+            background-color: $Light-very-light-gray;
+            
+            input {
+                transition-duration: 2s;
+                transition-delay: 15ms;
+                color: $Light-very-dark-grayish-blue;
+                font-weight: 400;
+            }
+
+            li {
+                transition-duration: 2s;
+                transition-delay: 15ms;
+                color: $Light-dark-grayish-blue;
+               
+                p{
+                    color: $Light-very-dark-grayish-blue;
+                    font-weight: 400;
+                }
+
+                a, span {
+                    transition-duration: 2s;
+                    transition-delay: 15ms;
+                    color: $Light-dark-grayish-blue;
+                }
+               
+
+                &:nth-child(n + 2)::after {
+                    transition-duration: 2s;
+                    transition-delay: 15ms;
+                    background: $Light-very-light-grayish-blue;
+                }
+            }
+
+            .finish {
+                .button {
+                    transition-duration: 2s;
+                    transition-delay: 15ms;
+                    background: $check-background;
+                }
+            }
+        }
+
+        nav {
+
+            button {
+                transition-duration: 2s;
+                transition-delay: 15ms;
+                color: $Light-very-dark-grayish-blue;
+            }
+        }
+        
+    }
+
+    footer {
+        p {
+            transition-duration: 2s;
+            transition-delay: 15ms;
+            color: $Dark-dark-grayish-blue;
+        }
+
+        .attribution {
+            a {
+                color: $Light-very-dark-grayish-blue;
+                font-weight: 700;
+            }
+        }
+    }
+}

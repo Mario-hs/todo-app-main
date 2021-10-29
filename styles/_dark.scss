@@ -1,0 +1,90 @@
+@import './variable';
+
+.dark {
+    transition-duration: 1.5s;
+    transition-delay: 10ms;
+    background-color: $Dark-very-dark-blue;
+
+    header {
+        transition-duration: 2s;
+        transition-delay: 15ms;
+        background-image: url('../project/images/bg-mobile-dark.jpg');
+
+        .icon-themes {
+            #light {
+                display: block;
+            }
+            #dark {
+                display: none;
+            }
+        }
+    }
+
+    main {
+
+        section, nav {
+            transition-duration: 2s;
+            transition-delay: 15ms;
+            background-color: $Dark-very-dark-desaturated-blue;
+            
+            input {
+                transition-duration: 2s;
+                transition-delay: 15ms;
+                color: $Dark-light-grayish-blue;
+            }
+
+            li {
+                transition-duration: 2s;
+                transition-delay: 15ms;
+                color: $Dark-light-grayish-blue;
+            
+                a, span {
+                    transition-duration: 2s;
+                    transition-delay: 15ms;
+                    color: $Dark-dark-grayish-blue;
+                }
+               
+
+                &:nth-child(n + 2)::after {
+                    transition-duration: 2s;
+                    transition-delay: 15ms;
+                    background: $Dark-very-dark-grayish-blue;
+                }
+            }
+
+            .finish {
+                .button {
+                    transition-duration: 2s;
+                    transition-delay: 15ms;
+                    background: $check-background;
+                }
+            }
+        }
+
+        nav {
+
+            button {
+                transition-duration: 2s;
+                transition-delay: 15ms;
+                color: $Dark-light-grayish-blue;
+            }
+        }
+        
+    }
+
+    footer {
+        p {
+            transition-duration: 2s;
+            transition-delay: 15ms;
+            color: $Dark-dark-grayish-blue;
+        }
+
+        .attribution {
+            a {
+                transition-duration: 2s;
+                transition-delay: 15ms;
+                color: $Dark-light-grayish-blue-hover;
+            }
+        }
+    }
+}

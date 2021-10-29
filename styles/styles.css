@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+}
+
+a, li, ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+button, input {
+  background: none;
+  border: none;
+}
+
+button {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 27px;
+}
+
+span, a {
+  font-size: 12px;
+}
+
+.dark {
+  -webkit-transition-duration: 1.5s;
+          transition-duration: 1.5s;
+  -webkit-transition-delay: 10ms;
+          transition-delay: 10ms;
+  background-color: #161722;
+}
+
+.dark header {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  background-image: url("../project/images/bg-mobile-dark.jpg");
+}
+
+.dark header .icon-themes #light {
+  display: block;
+}
+
+.dark header .icon-themes #dark {
+  display: none;
+}
+
+.dark main section, .dark main nav {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  background-color: #25273c;
+}
+
+.dark main section input, .dark main nav input {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #cacde8;
+}
+
+.dark main section li, .dark main nav li {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #cacde8;
+}
+
+.dark main section li a, .dark main section li span, .dark main nav li a, .dark main nav li span {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #777a92;
+}
+
+.dark main section li:nth-child(n + 2)::after, .dark main nav li:nth-child(n + 2)::after {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  background: #393a4c;
+}
+
+.dark main section .finish .button, .dark main nav .finish .button {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  background: linear-gradient(145deg, #57ddff 10%, #c058f3 90%);
+}
+
+.dark main nav button {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #cacde8;
+}
+
+.dark footer p {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #777a92;
+}
+
+.dark footer .attribution a {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #e4e5f1;
+}
+
+.light {
+  -webkit-transition-duration: 1.5s;
+          transition-duration: 1.5s;
+  -webkit-transition-delay: 10ms;
+          transition-delay: 10ms;
+  background-color: #e4e5f1;
+}
+
+.light header {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  background-image: url("../project/images/bg-mobile-light.jpg");
+}
+
+.light header .icon-themes #light {
+  display: none;
+}
+
+.light header .icon-themes #dark {
+  display: block;
+}
+
+.light main section, .light main nav {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  background-color: #fafafa;
+}
+
+.light main section input, .light main nav input {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #484b6a;
+  font-weight: 400;
+}
+
+.light main section li, .light main nav li {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #9394a5;
+}
+
+.light main section li p, .light main nav li p {
+  color: #484b6a;
+  font-weight: 400;
+}
+
+.light main section li a, .light main section li span, .light main nav li a, .light main nav li span {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #9394a5;
+}
+
+.light main section li:nth-child(n + 2)::after, .light main nav li:nth-child(n + 2)::after {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  background: #e4e5f1;
+}
+
+.light main section .finish .button, .light main nav .finish .button {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  background: linear-gradient(145deg, #57ddff 10%, #c058f3 90%);
+}
+
+.light main nav button {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #484b6a;
+}
+
+.light footer p {
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-delay: 15ms;
+          transition-delay: 15ms;
+  color: #777a92;
+}
+
+.light footer .attribution a {
+  color: #484b6a;
+  font-weight: 700;
+}
+
+body {
+  -webkit-transition-duration: 10s;
+          transition-duration: 10s;
+}
+
+body header {
+  background-size: cover;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px 24px;
+  text-transform: uppercase;
+}
+
+body header h1 {
+  letter-spacing: 0.7rem;
+  color: #fafafa;
+}
+
+body header .icon-themes #light {
+  width: 20px;
+  cursor: pointer;
+}
+
+body header .icon-themes #dark {
+  width: 20px;
+  cursor: pointer;
+}
+
+body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: -90px auto 30px;
+}
+
+body main section, body main nav {
+  width: 88%;
+  margin-bottom: 15px;
+  border-radius: .55rem;
+  padding: 0 20px;
+}
+
+body main section input, body main nav input {
+  height: 48px;
+  width: 100%;
+  font-weight: 300;
+}
+
+body main section :focus, body main nav :focus {
+  outline: 0;
+}
+
+body main section li, body main nav li {
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main section li .button, body main nav li .button {
+  margin-right: 12px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 20px;
+  width: 20px;
+  background-color: none;
+  border: solid 1px;
+  border-radius: 50%;
+}
+
+body main section li .button img, body main nav li .button img {
+  display: none;
+}
+
+body main section li p, body main nav li p {
+  height: 53px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main section li p a, body main section li p span, body main nav li p a, body main nav li p span {
+  font-weight: 400;
+}
+
+body main section li img, body main nav li img {
+  width: 12px;
+  height: 12px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  cursor: pointer;
+}
+
+body main section li:nth-child(n + 2)::after, body main nav li:nth-child(n + 2)::after {
+  content: " ";
+  position: absolute;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+  width: 88%;
+  height: 1px;
+}
+
+body main section .finish .button img, body main nav .finish .button img {
+  display: block;
+  width: 9px;
+  height: 9px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: auto;
+}
+
+body main section .finish p, body main nav .finish p {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+body main nav {
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body main nav button {
+  opacity: 0.6;
+}
+
+body main nav .active {
+  color: #3a7bfd;
+  opacity: 1;
+}
+
+body footer p {
+  font-size: 14px;
+  text-align: center;
+  margin: 10px;
+}
+
+body footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #777a92;
+}
+/*# sourceMappingURL=styles.css.map */
