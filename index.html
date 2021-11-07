@@ -13,10 +13,6 @@
   <link rel="stylesheet" href="./styles/styles.css">
 
 </head>
-<!--
-  light
-  dark
- -->
 
 <body id="theme" class="light">
   <header>
@@ -34,7 +30,7 @@
 
     <section>
       <ul>
-        <li class="finish">
+        <li class="to-do">
           <div class="button ">
             <img src="./project/images/icon-check.svg" alt="icon check">
           </div>
@@ -43,35 +39,35 @@
           </p>
           <img src="./project/images/icon-cross.svg" alt="close button">
         </li>
-        <li class="finish">
+        <li class="to-do">
           <div class="button">
             <img src="./project/images/icon-check.svg" alt="icon check">
           </div>
           <p>Jog around the park 3x</p>
           <img src="./project/images/icon-cross.svg" alt="close button">
         </li>
-        <li>
+        <li class="to-do">
           <div class="button">
             <img src="./project/images/icon-check.svg" alt="icon check">
           </div>
           <p>10 minutes meditation</p>
           <img src="./project/images/icon-cross.svg" alt="close button">
         </li>
-        <li>
+        <li class="to-do">
           <div class="button">
             <img src="./project/images/icon-check.svg" alt="icon check">
           </div>
           <p>Read for hour</p>
           <img src="./project/images/icon-cross.svg" alt="close button">
         </li>
-        <li>
+        <li class="to-do">
           <div class="button">
             <img src="./project/images/icon-check.svg" alt="icon check">
           </div>
           <p>Pick up groceries</p>
           <img src="./project/images/icon-cross.svg" alt="close button">
         </li>
-        <li>
+        <li class="to-do">
           <div class="button">
             <img src="./project/images/icon-check.svg" alt="icon check">
           </div>
@@ -83,13 +79,20 @@
             <span>
               <!-- Add dynamic number --> 5 items left
             </span>
+          </p>
+          <nav class="nav_desktop">
+            <button class="active">All</button>
+            <button>Active</button>
+            <button>Completed</button>
+          </nav>
+          <p style="justify-content: flex-end">
             <span><a href="#">Clear Completed</a></span>
           </p>
         </li>
       </ul>
     </section>
 
-    <nav>
+    <nav class="nav_mobile">
       <button class="active">All</button>
       <button>Active</button>
       <button>Completed</button>

@@ -1,9 +1,26 @@
 @media(min-width: 481px){
-
+    
 }
 
 @media(min-width: 769px){
+    main {
+        section {
+            ul {
+                li {
+                    
+                    .nav_desktop {
+                        display: flex;
+                        margin-bottom: 0px;
+                        align-self: center;
+                    }
+                }
+            }
+        }
+        .nav_mobile {
+            display: none !important;
+        }
 
+    }
 }
 
 @media(min-width: 1280px){

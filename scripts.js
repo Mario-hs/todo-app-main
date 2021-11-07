@@ -7,3 +7,7 @@ const darkTheme = document.querySelector('#dark').addEventListener('click', () =
     document.querySelector('#theme').classList.remove('light')
     document.querySelector('#theme').classList.add('dark')
 })
+
+const completedToDo = document.querySelector('.button').addEventListener('click', () => {
+    document.querySelector('.to-do').classList.add('finish')
+})

@@ -359,6 +359,10 @@ body main section li:nth-child(n + 2)::after, body main nav li:nth-child(n + 2):
   height: 1px;
 }
 
+body main section li .nav_desktop, body main nav li .nav_desktop {
+  display: none;
+}
+
 body main section .finish .button img, body main nav .finish .button img {
   display: block;
   width: 9px;
@@ -404,5 +408,19 @@ body footer .attribution {
   font-size: 11px;
   text-align: center;
   color: #777a92;
+}
+
+@media (min-width: 769px) {
+  main section ul li .nav_desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0px;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+  main .nav_mobile {
+    display: none !important;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
