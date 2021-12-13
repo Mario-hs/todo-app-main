@@ -29,61 +29,18 @@
     </section>
 
     <section>
+      <ul id="container_to_do">
+      </ul>
       <ul>
-        <li class="to-do">
-          <div class="button ">
-            <img src="./project/images/icon-check.svg" alt="icon check">
-          </div>
-          <p>
-            Complete online JavaScrip course
-          </p>
-          <img src="./project/images/icon-cross.svg" alt="close button">
-        </li>
-        <li class="to-do">
-          <div class="button">
-            <img src="./project/images/icon-check.svg" alt="icon check">
-          </div>
-          <p>Jog around the park 3x</p>
-          <img src="./project/images/icon-cross.svg" alt="close button">
-        </li>
-        <li class="to-do">
-          <div class="button">
-            <img src="./project/images/icon-check.svg" alt="icon check">
-          </div>
-          <p>10 minutes meditation</p>
-          <img src="./project/images/icon-cross.svg" alt="close button">
-        </li>
-        <li class="to-do">
-          <div class="button">
-            <img src="./project/images/icon-check.svg" alt="icon check">
-          </div>
-          <p>Read for hour</p>
-          <img src="./project/images/icon-cross.svg" alt="close button">
-        </li>
-        <li class="to-do">
-          <div class="button">
-            <img src="./project/images/icon-check.svg" alt="icon check">
-          </div>
-          <p>Pick up groceries</p>
-          <img src="./project/images/icon-cross.svg" alt="close button">
-        </li>
-        <li class="to-do">
-          <div class="button">
-            <img src="./project/images/icon-check.svg" alt="icon check">
-          </div>
-          <p>Complete Todo App on Frontend Mentor</p>
-          <img src="./project/images/icon-cross.svg" alt="close button">
-        </li>
         <li>
           <p>
-            <span>
-              <!-- Add dynamic number --> 5 items left
+            <span id="qtd_itens">
             </span>
           </p>
           <nav class="nav_desktop">
-            <button class="active">All</button>
-            <button>Active</button>
-            <button>Completed</button>
+            <button class="active" onclick="showToDo(1)">All</button>
+            <button onclick="showToDo(2)">Active</button>
+            <button onclick="showToDo(3)">Completed</button>
           </nav>
           <p style="justify-content: flex-end">
             <span><a href="#">Clear Completed</a></span>

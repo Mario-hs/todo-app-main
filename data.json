@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "todo": "Complete online JavaScript course",
+        "active": true
+    },
+    {
+        "id": 2,
+        "todo": "Jog around the park 3x",
+        "active": false
+    },
+    {
+        "id": 3,
+        "todo": "10 minutes meditation",
+        "active": true
+    },
+    {
+        "id": 4,
+        "todo": "Read for 1 hour",
+        "active": true
+    },
+    {
+        "id": 6,
+        "todo": "Pick up groceries",
+        "active": true
+    },
+    {
+        "id": 7,
+        "todo": "Complete Todo App on ​​Frontend Mentor",
+        "active": true
+    }
+]
