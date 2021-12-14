@@ -39,6 +39,8 @@ function showToDo(opc) {
     Todo.map((prop) => {
 
         if (opc == 2) {
+            showNavBar(1)
+
             if (prop.active == true) {
                 output = `<li class="to-do">
                     <div class="button" id="${prop.id}">
@@ -55,6 +57,8 @@ function showToDo(opc) {
             }
 
         } else if (opc == 3) {
+            showNavBar(2)
+
             if (prop.active != true) {
 
                 output = `<li class="to-do">
@@ -72,6 +76,8 @@ function showToDo(opc) {
             }
 
         } else if (opc == 1) {
+            showNavBar(0)
+
             output = `<li class="to-do">
                     <div class="button" id="${prop.id}">
                         <img src="./project/images/icon-check.svg" alt="icon check">
@@ -88,6 +94,25 @@ function showToDo(opc) {
     })
 
 
+}
+
+// document.querySelectorAll('nav button').addEventListener('click', (e) => {
+//     console.log(e.value)
+// })
+
+// console.log(list[])
+
+function showNavBar(opc) {
+    const list = document.querySelectorAll('nav button').valueOf()
+    console.log(list)
+    for (i = 0; i < list.length; i++) {
+        if (list[opc].value != list[i].value) {
+            list[i].classList.remove('active')
+        } else if (list[opc].value == list[i].value) {
+            list[i].classList.add('active')
+        }
+    }
+    return null
 }
 
 getDatas()

@@ -38,9 +38,9 @@
             </span>
           </p>
           <nav class="nav_desktop">
-            <button class="active" onclick="showToDo(1)">All</button>
-            <button onclick="showToDo(2)">Active</button>
-            <button onclick="showToDo(3)">Completed</button>
+            <button value="all" onclick="showToDo(1)">All</button>
+            <button value="active" onclick="showToDo(2)">Active</button>
+            <button value="completed" onclick="showToDo(3)">Completed</button>
           </nav>
           <p style="justify-content: flex-end">
             <span><a href="#">Clear Completed</a></span>
@@ -50,9 +50,9 @@
     </section>
 
     <nav class="nav_mobile">
-      <button class="active">All</button>
-      <button>Active</button>
-      <button>Completed</button>
+      <button value="all" onclick="showToDo(1)">All</button>
+      <button value="active" onclick="showToDo(2)">Active</button>
+      <button value="completed" onclick="showToDo(3)">Completed</button>
     </nav>
   </main>
 
