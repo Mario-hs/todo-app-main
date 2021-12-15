@@ -10,10 +10,6 @@ const darkTheme = document.querySelector('#dark').addEventListener('click', () =
     document.querySelector('#theme').classList.add('dark')
 })
 
-// const completedToDo = document.querySelector('.button').addEventListener('click', () => {
-//     document.querySelector('.to-do').classList.add('finish')
-// })
-
 async function getDatas() {
     try {
         const request = await fetch('./data.json')
@@ -29,7 +25,6 @@ async function getDatas() {
 }
 
 function showToDo(opc) {
-    console.log(opc)
 
     let output = ''
     let count = 0
@@ -42,8 +37,8 @@ function showToDo(opc) {
             showNavBar(1)
 
             if (prop.active == true) {
-                output = `<li class="to-do">
-                    <div class="button" id="${prop.id}">
+                output = `<li class="to-do" id="${prop.id}" onclick="tentando(${prop.id})">
+                    <div class="button">
                         <img src="./project/images/icon-check.svg" alt="icon check">
                     </div>
                     <p>${prop.todo}</p>
@@ -61,8 +56,8 @@ function showToDo(opc) {
 
             if (prop.active != true) {
 
-                output = `<li class="to-do">
-                    <div class="button" id="${prop.id}">
+                output = `<li class="to-do finish" id="${prop.id}" onclick="tentando(${prop.id})">
+                    <div class="button">
                         <img src="./project/images/icon-check.svg" alt="icon check">
                     </div>
                     <p>${prop.todo}</p>
@@ -78,13 +73,23 @@ function showToDo(opc) {
         } else if (opc == 1) {
             showNavBar(0)
 
-            output = `<li class="to-do">
-                    <div class="button" id="${prop.id}">
+            output = `<li class="to-do" id="${prop.id}" onclick="tentando(${prop.id})">
+                    <div class="button">
                         <img src="./project/images/icon-check.svg" alt="icon check">
                     </div>
                     <p>${prop.todo}</p>
                     <img src="./project/images/icon-cross.svg" alt="close button">
                 </li>`
+
+            if (prop.active == false) {
+                output = `<li class="to-do finish" id="${prop.id}" onclick="tentando(${prop.id})">
+                            <div class="button">
+                                <img src="./project/images/icon-check.svg" alt="icon check">
+                            </div>
+                            <p>${prop.todo}</p>
+                            <img src="./project/images/icon-cross.svg" alt="close button">
+                        </li>`
+            }
 
             document.querySelector('#container_to_do').innerHTML += output
 
@@ -93,18 +98,11 @@ function showToDo(opc) {
 
     })
 
-
 }
-
-// document.querySelectorAll('nav button').addEventListener('click', (e) => {
-//     console.log(e.value)
-// })
-
-// console.log(list[])
 
 function showNavBar(opc) {
     const list = document.querySelectorAll('nav button').valueOf()
-    console.log(list)
+
     for (i = 0; i < list.length; i++) {
         if (list[opc].value != list[i].value) {
             list[i].classList.remove('active')
@@ -112,7 +110,16 @@ function showNavBar(opc) {
             list[i].classList.add('active')
         }
     }
-    return null
+}
+
+function tentando(id){
+    if(document.getElementById(id).classList.contains('finish')){
+        document.getElementById(id).classList.remove('finish')
+    }else{
+        document.getElementById(id).classList.add('finish')
+    }
+    console.log('cheguei')
+    console.log(`tentando ${id}`)
 }
 
 getDatas()
