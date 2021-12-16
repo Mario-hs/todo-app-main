@@ -10,6 +10,12 @@ const darkTheme = document.querySelector('#dark').addEventListener('click', () =
     document.querySelector('#theme').classList.add('dark')
 })
 
+const enter = document.querySelector('#new_todo').addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
+        console.log('clicou')
+    }
+})
+
 async function getDatas() {
     try {
         const request = await fetch('./data.json')
@@ -112,10 +118,10 @@ function showNavBar(opc) {
     }
 }
 
-function tentando(id){
-    if(document.getElementById(id).classList.contains('finish')){
+function tentando(id) {
+    if (document.getElementById(id).classList.contains('finish')) {
         document.getElementById(id).classList.remove('finish')
-    }else{
+    } else {
         document.getElementById(id).classList.add('finish')
     }
     console.log('cheguei')
