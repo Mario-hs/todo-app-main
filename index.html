@@ -34,25 +34,24 @@
       <ul>
         <li>
           <p>
-            <span id="qtd_itens">
-            </span>
+            <span id="qtd_itens">0 items left</span>
           </p>
           <nav class="nav_desktop">
-            <button value="all" onclick="showToDo(1)">All</button>
-            <button value="active" onclick="showToDo(2)">Active</button>
-            <button value="completed" onclick="showToDo(3)">Completed</button>
+            <button value="all" onclick="App.init('all')">All</button>
+            <button value="active" onclick="App.init('active')">Active</button>
+            <button value="completed" onclick="App.init('completed')">Completed</button>
           </nav>
           <p style="justify-content: flex-end">
-            <span><a href="#">Clear Completed</a></span>
+            <span style="cursor: pointer;" onclick="DOM.clearToDo()">Clear Completed</span>
           </p>
         </li>
       </ul>
     </section>
 
     <nav class="nav_mobile">
-      <button value="all" onclick="showToDo(1)">All</button>
-      <button value="active" onclick="showToDo(2)">Active</button>
-      <button value="completed" onclick="showToDo(3)">Completed</button>
+      <button value="all" onclick="App.init('all')">All</button>
+      <button value="active" onclick="App.init('active')">Active</button>
+      <button value="completed" onclick="App.init('completed')">Completed</button>
     </nav>
   </main>
 

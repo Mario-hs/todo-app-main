@@ -1,4 +1,8 @@
-let Todo = []
+const Event = document.querySelector('#new_todo').addEventListener('keyup', (event) => {
+    if (event.keyCode === 13) {
+        ToDo.submit(true)
+    }
+})
 
 const lightTheme = document.querySelector('#light').addEventListener('click', () => {
     document.querySelector('#theme').classList.remove('dark')
@@ -10,122 +14,194 @@ const darkTheme = document.querySelector('#dark').addEventListener('click', () =
     document.querySelector('#theme').classList.add('dark')
 })
 
-const enter = document.querySelector('#new_todo').addEventListener('keyup', (event) => {
-    if (event.keyCode === 13) {
-        console.log('clicou')
-    }
-})
+// Armazenamento no browser
+const Storage = {
+    get() {
+        return JSON.parse(localStorage.getItem("todos")) || []
+    },
 
-async function getDatas() {
-    try {
-        const request = await fetch('./data.json')
-        const data = await request.json()
+    set(todo) {
+        localStorage.setItem("todos", JSON.stringify(todo))
+    },
 
-        Todo = data
-
-        showToDo(1)
-
-    } catch (error) {
-        console.error(error)
+    clear() {
+        localStorage.clear()
+        window.location.reload()
     }
 }
 
-function showToDo(opc) {
+const ListToDo = {
+    all: Storage.get(),
 
-    let output = ''
-    let count = 0
-    document.querySelector('#container_to_do').innerHTML = output
+    add(todo) {
+        ListToDo.all.push(todo)
 
+        App.reload()
+    },
 
-    Todo.map((prop) => {
+    remove(index) {
+        ListToDo.all.splice(index, 1)
 
-        if (opc == 2) {
-            showNavBar(1)
+        App.reload()
+    },
 
-            if (prop.active == true) {
-                output = `<li class="to-do" id="${prop.id}" onclick="tentando(${prop.id})">
-                    <div class="button">
-                        <img src="./project/images/icon-check.svg" alt="icon check">
-                    </div>
-                    <p>${prop.todo}</p>
-                    <img src="./project/images/icon-cross.svg" alt="close button">
-                </li>`
+    listToDo() {
+        let list = 0
 
-                document.querySelector('#container_to_do').innerHTML += output
+        ListToDo.all.forEach(todo => {
+            list += todo
+        });
 
-                count++
-                document.querySelector('#qtd_itens').innerHTML = `${count} items left`
-            }
+        return list
+    }
+}
 
-        } else if (opc == 3) {
-            showNavBar(2)
+const DOM = {
+    toDoContainer: document.querySelector('#container_to_do'),
 
-            if (prop.active != true) {
+    qtdItens: document.querySelector('#qtd_itens'),
 
-                output = `<li class="to-do finish" id="${prop.id}" onclick="tentando(${prop.id})">
-                    <div class="button">
-                        <img src="./project/images/icon-check.svg" alt="icon check">
-                    </div>
-                    <p>${prop.todo}</p>
-                    <img src="./project/images/icon-cross.svg" alt="close button">
-                </li>`
+    barNavigation: document.querySelectorAll('nav button'),
 
-                document.querySelector('#container_to_do').innerHTML += output
+    addToDo(todo, index) {
+        const CSSclass = todo.completed == true ? "finish" : null
+        const html = `<li class="to-do ${CSSclass}" id="${index}" onclick="DOM.finish(${index})">
+                        <div class="button">
+                            <img src="./project/images/icon-check.svg" alt="icon check">
+                        </div>
+                        <p>${todo.description}</p>
+                        <img onclick="ListToDo.remove(${index})" src="./project/images/icon-cross.svg" alt="close button">
+                    </li>`
 
-                count++
-                document.querySelector('#qtd_itens').innerHTML = `${count} items left`
-            }
+        DOM.toDoContainer.innerHTML += html
+        DOM.qtdItens.innerHTML = `${index + 1} items left`
+    },
 
-        } else if (opc == 1) {
-            showNavBar(0)
+    finish(index) {
+        const dataToDo = ListToDo.all[index]
 
-            output = `<li class="to-do" id="${prop.id}" onclick="tentando(${prop.id})">
-                    <div class="button">
-                        <img src="./project/images/icon-check.svg" alt="icon check">
-                    </div>
-                    <p>${prop.todo}</p>
-                    <img src="./project/images/icon-cross.svg" alt="close button">
-                </li>`
-
-            if (prop.active == false) {
-                output = `<li class="to-do finish" id="${prop.id}" onclick="tentando(${prop.id})">
-                            <div class="button">
-                                <img src="./project/images/icon-check.svg" alt="icon check">
-                            </div>
-                            <p>${prop.todo}</p>
-                            <img src="./project/images/icon-cross.svg" alt="close button">
-                        </li>`
-            }
-
-            document.querySelector('#container_to_do').innerHTML += output
-
-            document.querySelector('#qtd_itens').innerHTML = `${Todo.length} items left`
+        if (dataToDo.completed == false) {
+            document.getElementById(index).classList.add('finish')
+            dataToDo.completed = true
+            return null
         }
 
-    })
+        document.getElementById(index).classList.remove('finish')
+        dataToDo.completed = false
+    },
 
+    cssBarNavigation(opc) {
+        const CSSclass = DOM.barNavigation
+        CSSclass.forEach((e) => {
+            e.classList.remove('active')
+            if (e.value == opc) {
+                e.classList.add('active')
+            }
+        })
+    },
+
+    clearToDo() {
+        Storage.clear()
+        DOM.toDoContainer.innerHTML = ""
+        DOM.qtdItens.innerHTML = "0 items left"
+
+    }
 }
 
-function showNavBar(opc) {
-    const list = document.querySelectorAll('nav button').valueOf()
+const ToDo = {
+    description: document.querySelector('#new_todo'),
 
-    for (i = 0; i < list.length; i++) {
-        if (list[opc].value != list[i].value) {
-            list[i].classList.remove('active')
-        } else if (list[opc].value == list[i].value) {
-            list[i].classList.add('active')
+    getValues() {
+        return {
+            description: ToDo.description.value,
+            completed: false,
         }
+    },
+
+    validateToDo() {
+        let { description, completed } = ToDo.getValues()
+
+        if (description.trim() === '') {
+            throw new Error("Por favor, preencha o campo de maneira correta")
+        } else {
+            return {
+                description,
+                completed,
+            }
+        }
+    },
+
+    saveToDo(todo) {
+        ListToDo.add(todo)
+    },
+
+    clearToDo() {
+        ToDo.description.value = ''
+    },
+
+    submit(Event) {
+
+        if (Event === true) {
+            try {
+                const newToDo = ToDo.validateToDo()
+
+                ToDo.saveToDo(newToDo)
+
+                ToDo.clearToDo()
+
+            } catch (error) {
+                alert(error.message)
+            }
+        }
+
+    },
+
+    Active(state) {
+        return state.completed == false
+    },
+
+    Completed(state) {
+        return state.completed == true
     }
 }
 
-function tentando(id) {
-    if (document.getElementById(id).classList.contains('finish')) {
-        document.getElementById(id).classList.remove('finish')
-    } else {
-        document.getElementById(id).classList.add('finish')
+
+const App = {
+    init(opc) {
+
+        DOM.toDoContainer.innerHTML = ""
+        DOM.qtdItens.innerHTML = "0 items left"
+        console.log(ListToDo.all)
+        if (opc == 'all') {
+            DOM.cssBarNavigation(opc)
+            ListToDo.all.forEach(function (todo, index) {
+                DOM.addToDo(todo, index)
+            })
+
+        } else if (opc == 'active') {
+            DOM.cssBarNavigation(opc)
+            const ActivesToDo = ListToDo.all.filter(ToDo.Active)
+            ActivesToDo.forEach(function (todo, index) {
+                DOM.addToDo(todo, index)
+            })
+
+        } else if (opc == 'completed') {
+            DOM.cssBarNavigation(opc)
+            const CompletedToDo = ListToDo.all.filter(ToDo.Completed)
+            CompletedToDo.forEach(function (todo, index) {
+                DOM.addToDo(todo, index)
+            })
+
+        }
+
+        Storage.set(ListToDo.all)
+    },
+
+    reload() {
+        // DOM.clearToDo()
+        const opc = document.querySelector('.active').value
+        App.init(opc)
     }
-    console.log('cheguei')
-    console.log(`tentando ${id}`)
 }
 
-getDatas()
+App.init('all')
