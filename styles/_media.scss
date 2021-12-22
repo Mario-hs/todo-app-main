@@ -3,23 +3,48 @@
 }
 
 @media(min-width: 769px){
-    main {
-        section {
-            ul {
-                li {
-                    
-                    .nav_desktop {
-                        display: flex;
-                        margin-bottom: 0px;
-                        align-self: center;
+
+    body{
+        header {
+            padding: 90px 440px;
+        }
+    
+        main {
+            margin-top: -130px ;
+            max-width: 620px;
+
+            section, nav {
+                input {
+                    height: 55px;
+                }
+
+                ul {
+                    li {
+                        
+                        .nav_desktop {
+                            display: flex;
+                            margin-bottom: 0px;
+                            align-self: center;
+                            margin-left: -110px;
+                            margin-right: -110px;
+                        }
+
+                        p {
+                            height: 60px;
+                        }
+
+                        &:nth-child(n + 2)::after {
+                            width: 545px;
+                        }
+
                     }
                 }
             }
+            .nav_mobile {
+                display: none !important;
+            }
+    
         }
-        .nav_mobile {
-            display: none !important;
-        }
-
     }
 }
 
