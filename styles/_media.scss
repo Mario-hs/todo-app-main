@@ -1,12 +1,11 @@
-@media(min-width: 481px){
-    
-}
+
 
 @media(min-width: 769px){
 
     body{
+
         header {
-            padding: 90px 440px;
+            padding: 90px 20%;
         }
     
         main {
@@ -31,6 +30,7 @@
 
                         p {
                             height: 60px;
+                            font-size: 14px
                         }
 
                         &:nth-child(n + 2)::after {
@@ -48,6 +48,19 @@
     }
 }
 
-@media(min-width: 1280px){
-    
+@media(min-width: 1440px){
+    body {
+        header {
+            padding: 90px 440px;
+        }
+    }
+}
+
+@media(min-width: 1540px){
+    body {
+        header {
+            padding-left: 35%;
+            padding-right: 35%;
+        }
+    }
 }

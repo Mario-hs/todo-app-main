@@ -418,7 +418,7 @@ body footer .attribution {
 
 @media (min-width: 769px) {
   body header {
-    padding: 90px 440px;
+    padding: 90px 20%;
   }
   body main {
     margin-top: -130px;
@@ -439,12 +439,26 @@ body footer .attribution {
   }
   body main section ul li p, body main nav ul li p {
     height: 60px;
+    font-size: 14px;
   }
   body main section ul li:nth-child(n + 2)::after, body main nav ul li:nth-child(n + 2)::after {
     width: 545px;
   }
   body main .nav_mobile {
     display: none !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  body header {
+    padding: 90px 440px;
+  }
+}
+
+@media (min-width: 1540px) {
+  body header {
+    padding-left: 35%;
+    padding-right: 35%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
